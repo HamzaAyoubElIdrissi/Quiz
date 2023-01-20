@@ -1,0 +1,71 @@
+MDScreen:
+    name: "main"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        Image:
+            source:"assets/ocp.png"
+            pos_hint:{'center_x':.5,'center_y': .88}
+            size_hint: .42, .37
+
+        Image:
+            source:"assets/3474044.png"
+            pos_hint:{'center_x':.5,'center_y': .66}
+            size_hint: .6, .6
+            
+        # Image:
+        #     source:"assets/smart.png"
+        #     pos_hint:{'center_x':.68,'center_y': .88}
+        #     size_hint: .3, .3
+
+        # Image:
+        #     source:"assets/smart-farm.png"
+        #     pos_hint:{'center_x':.88,'center_y': .12}
+        #     size_hint: .3, .3
+        
+        MDLabel:
+            text:"H E L L O !"
+            font_name: 'BRLNSR'
+            font_size: '23sp'
+            pos_hint: {'center_y': .47}
+            halign : "center"
+            color: rgba(34,34,34, 255)
+
+        MDLabel:
+            text:"Best Agriculture Quizz Apllication"
+            font_name: 'BKANT'
+            font_size: '18sp'
+            pos_hint: {'center_x':.5,'center_y': .39}
+            halign : "center"
+            color: rgba(127,127,127, 255)
+
+        MDRectangleFlatButton:
+            text:"Login"
+            text_color: "white"
+            size_hint: .66, .075
+            md_bg_color: "limegreen"
+            line_color: "gold"
+            #color: rgba(0, 0, 0, 255)
+            font_name: 'BRLNSDB'
+            background_color: 0, 0, 0, 0
+            pos_hint:{"center_x":.5,"center_y":0.3}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "login"
+
+        MDRectangleFlatButton:
+            text:"Signup"
+            text_color: "white"
+            size_hint: .66, .075
+            md_bg_color: "royalblue"
+            line_color: "skyblue"
+            #color: rgba(0, 0, 0, 255)
+            font_name: 'BRLNSDB'
+            background_color: 0, 0, 0, 0
+            pos_hint:{"center_x":.5,"center_y":0.20}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"
+           
+                
+
+     

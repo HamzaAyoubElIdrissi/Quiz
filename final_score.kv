@@ -1,0 +1,93 @@
+MDScreen:
+    correct: correct
+    wrong: wrong
+    success_rate: success_rate
+    name: "final_score"
+
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+
+        MDLabel:
+            text:"Final\nScore!"
+            font_name: 'BRLNSR'
+            halign: "center"
+            font_size: '30sp'
+            pos_hint: {'center_y': .88}
+            color: rgba(0, 0, 128, 255)
+
+        MDLabel:
+            id: correct
+            text:""
+            size_hint: .8, .12
+            font_name: 'BKANT'
+            font_size: '15sp'
+            pos_hint: {'center_x':.5,'center_y': .73}
+            halign: "center"
+            # color: rgba(119,136,153, 255)
+            line_height: 1.1
+            canvas.before:
+                Color: 
+                    rgb: rgba(108, 226, 120, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.x,  self.y + 5
+                    radius: [10]
+
+        MDLabel:
+            id: wrong
+            text:""
+            size_hint: .8, .12
+            font_name: 'BKANT'
+            font_size: '15sp'
+            pos_hint: {'center_x':.5,'center_y': .55}
+            halign: "center"
+            # color: rgba(119,136,153, 255)
+            line_height: 1.1
+            canvas.before:
+                Color: 
+                    rgb: rgba(208, 62, 66, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.x,  self.y + 5
+                    radius: [10]
+        MDLabel:
+            id: success_rate
+            text:""
+            size_hint: .8, .12
+            font_name: 'BKANT'
+            font_size: '15sp'
+            pos_hint: {'center_x':.5,'center_y': .38}
+            halign: "center"
+            # color: rgba(119,136,153, 255)
+            line_height: 1.1
+            canvas.before:
+                Color: 
+                    rgb: rgba(143, 216, 215, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.x,  self.y + 5
+                    radius: [10]
+
+        MDRaisedButton:
+            text:"Replay"
+            font_name: 'BRLNSR'
+            font_size: '35sp'
+            size_hint: .6, .09
+            text_color: "black"
+            line_color: rgba(38, 81, 96, 255)
+            halign: "center"
+            pos_hint: {"center_x": 0.5, 'center_y': .21}
+            md_bg_color: "orange"
+            on_release: app.replay()
+        
+        MDRaisedButton:
+            text:"Choose Topic"
+            font_name: 'BRLNSR'
+            font_size: '35sp'
+            size_hint: .6, .09
+            text_color: "black"
+            line_color: rgba(38, 81, 96, 255)
+            halign: "center"
+            pos_hint: {"center_x": 0.5, 'center_y': .09}
+            md_bg_color: "orange"
+            on_release: app.choose_topic()

@@ -1,0 +1,161 @@
+MDScreen:
+    name: "login"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint:{'center_y': .95}
+            font_size: "30sp"
+            theme_text_color: "Custom"
+            text_color: rgba(26, 24, 58, 255)
+            on_release: 
+                root.manager.transition.direction = "left"
+                root.manager.current="main"
+
+        MDLabel:
+            text:"W E L C O M E !"
+            font_name: 'BRLNSR'
+            font_size: '26sp'
+            pos_hint: {'center_x': .60,'center_y': .86}
+            color: rgba(0, 0, 128, 255)
+
+        MDLabel:
+            text:"Sign in to continue"
+            font_name: 'BKANT'
+            font_size: '20sp'
+            pos_hint: {'center_x':.38,'center_y': .81}
+            halign: "center"
+            color: rgba(119,136,153, 255)
+
+        MDLabel:
+            id: alert
+            text:""
+            font_name: 'BKANT'
+            font_size: '13sp'
+            pos_hint: {'center_x':.5,'center_y': .75}
+            halign: "center"
+            color: rgba(255,0,0, 255)
+
+        
+        MDFloatLayout:
+            size_hint: .85, .07
+            pos_hint: {'center_x':.5,'center_y': .63}
+
+            MDTextField:
+                id: email
+                hint_text: "Email"
+                helper_text: "exemple@gmail.com"
+                helper_text_mode: "persistent"
+                mode: "rectangle"
+                pos_hint:{'center_x':.5,'center_y': .5}
+                #size_hint_y: .80
+                #required: True
+                multiline: False
+                text_color_normal: "navy"
+                text_color_focus: "blue"
+                #md_bg_color: rgba(178,178,178,255)
+
+        MDFloatLayout:
+            size_hint: .85, .07
+            pos_hint: {'center_x':.5,'center_y': .5}
+
+            MDTextField:
+                id: password
+                hint_text: "Password"
+                #helper_text: "exemple@gmail.com"
+                helper_text_mode: "persistent"
+                mode: "rectangle"
+                pos_hint:{'center_x':.5,'center_y': .1}
+                #size_hint_y: .80
+                #required: True
+                multiline: False
+                password: True
+                #md_bg_color: rgba(178,178,178,255)
+                icon_right: "key-variant"
+                icon_right_color_focus: "blue"
+                max_text_length: 15
+                text_color_normal: "navy"
+                text_color_focus: "blue"
+
+        MDRectangleFlatButton:
+            text:"Login"
+            text_color: "white"
+            size_hint: .70, .075
+            md_bg_color: "royalblue"
+            line_color: "skyblue"
+            #color: rgba(0, 0, 0, 255)
+            font_name: 'BRLNSDB'
+            background_color: 0, 0, 0, 0
+            pos_hint:{"center_x":.5,"center_y":0.33}
+            on_press:app.validate(email,password,alert)
+            on_release:
+                # app.wait(alert) 
+                root.manager.transition.direction = "right"
+                if alert.text == "": \ 
+                root.manager.current = "topics"
+
+        MDTextButton:
+            text:"Forgot Password ?"
+            pos_hint:{"center_x":.5,"center_y":0.26}
+            color: rgba(119,136,153, 255)
+            font_name: 'BKANT'
+            font_size:"13sp"
+        
+        MDLabel:
+            text: "or"
+            color: rgba(25,25,112,255)
+            font_size: "11sp"
+            pos_hint:{'center_y': .22}
+            font_name:'BKANT'
+            halign: "center"
+        
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .3, .002
+            pos_hint:{'center_x': .3,'center_y': .218}
+        
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .3, .002
+            pos_hint:{'center_x': .7,'center_y': .218}
+        
+        MDLabel:
+            text:"Social Media Login"
+            font_name:'BKANT'
+            font_size:"13sp"
+            halign:"center"
+            pos_hint:{'center_y': .16}
+            color: rgba(65,105,225,255)
+
+        MDGridLayout:
+            cols:2
+            rows:1
+            size_hint: .48, .07
+            pos_hint:{'center_x': .5,'center_y': .1}
+
+            Image:
+                source:"assets/gg.png"
+            Image:
+                source:"assets/fb.png"
+
+        MDLabel:
+            text:"don't have an account?"
+            font_name:'BKANT'
+            font_size:"13sp"
+            halign:"center"
+            pos_hint:{'center_x': .45,'center_y': .04}
+            color: rgba(119,136,153, 255)
+
+        MDTextButton:
+            text:"Sign up"
+            font_name:'BKANT'
+            font_size:"13sp"
+            halign:"center"
+            pos_hint:{'center_x': .75,'center_y': .04}
+            color: rgba(65,105,225,255)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"
+
+
+           

@@ -1,0 +1,235 @@
+MDScreen:
+    name: "topics"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+
+        MDRectangleFlatButton:
+            text:"Quit"
+            text_color: "white"
+            size_hint: .66, .075
+            md_bg_color: "mediumslateblue"
+            line_color: "skyblue"
+            #color: rgba(0, 0, 0, 255)
+            font_name: 'BRLNSDB'
+            background_color: 0, 0, 0, 0
+            pos_hint:{"center_x":.5,"center_y":0.07}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "main"
+        MDLabel:
+            text:"Topics"
+            font_name: 'BRLNSR'
+            font_size: '26sp'
+            pos_hint: {'center_x': .88,'center_y': .94}
+            color: rgba(0, 0, 128, 255)
+
+        MDLabel:
+            text:"Choose the topic that matches your concern"
+            font_name: 'BKANT'
+            font_size: '20sp'
+            pos_hint: {'center_x':.50,'center_y': .87}
+            halign: "center"
+            color: rgba(119,136,153, 255)
+
+
+    # MDGridLayout:
+    #     cols: 2
+    #     rows: 3
+        # pos_hint: {'center_x':.5,'center_y': .27}
+
+        MDCard:
+            text: "irrigation"
+            font_size: "0sp"
+            size_hint: None, None
+            size: 100,100
+            pos_hint: {"center_x":.25,"center_y":.7}
+            elevation: 4
+            padding: 5
+            spacing: 2
+            focus_behavior: True
+            focus_color:"lightgrey"
+            ripple_behavior: True
+            #radius: 15
+            orientation:"vertical"
+            on_release: app.select_topic(self.text)
+            FitImage:
+                source: "assets/irrigation.png"
+                #size_hint_y: 1
+                size_hint: 1, 1
+                pos_hint: {"center_x":0.5,"center_y": 0.1}
+                #radius: 19, 19, 19, 19
+        
+        MDLabel:
+            text:"Irrigation"
+            font_name: 'FTLTLT'
+            font_size: '15sp'
+            halign: "center"
+            pos_hint: {"center_x":0.25,"center_y":0.59}
+            color: rgba(0,0,0, 255)
+            
+
+            
+
+        MDCard:
+            text: "engrais"
+            font_size:"0sp"
+            size_hint: None, None
+            size: 100,100
+            pos_hint: {"center_x":.75,"center_y":.7}
+            elevation: 4
+            padding: 25
+            spacing: 25
+            focus_behavior: True
+            focus_color:"lightgrey"
+            #radius: 15
+            ripple_behavior: True
+            orientation:"vertical"
+            on_release: app.select_topic(self.text)
+            
+            FitImage:
+                source: "assets/mm.png"
+                #size_hint_y: 1
+                size_hint: 1.5, 1.5
+                pos_hint: {"center_x":0.5,"center_y": 0.38}
+                #radius: 19, 19, 19, 19
+        
+        MDLabel:
+            text:"Engrais"
+            font_name: 'FTLTLT'
+            font_size: '15sp'
+            halign: "center"
+            pos_hint: {"center_x":0.75,"center_y":0.59}
+            color: rgba(0,0,0, 255)
+
+        
+        MDCard:
+            text: "semence"
+            size_hint: None, None
+            font_size: "0sp"
+            size: 100,100
+            focus_behavior: True
+            focus_color:"lightgrey"
+            pos_hint: {"center_x":0.25,"center_y":0.47}
+            elevation: 4
+            padding: 5
+            spacing: 10
+            ripple_behavior: True
+            #radius: 15
+            orientation:"vertical"
+            on_release: app.select_topic(self.text)
+
+            FitImage:
+                source: "assets/sem.png"
+                #size_hint_y: 1
+                size_hint: 1.1, 1.1
+                pos_hint: {"center_x":0.5,"center_y": 0.35}
+                #radius: 19, 19, 19, 19
+
+        MDLabel:
+            text:"Semence"
+            font_name: 'FTLTLT'
+            font_size: '15sp'
+            halign: "center"
+            pos_hint: {"center_x":0.25,"center_y":0.36}
+            color: rgba(0,0,0, 255)
+
+        
+        MDCard:
+            text: "pesticides"
+            font_size:"0sp"
+            size_hint: None, None
+            size: 100,100
+            focus_behavior: True
+            focus_color:"lightgrey"
+            pos_hint: {"center_x":0.75,"center_y":0.47}
+            elevation: 4
+            padding: 5
+            spacing: 10
+            ripple_behavior: True
+            #radius: 15
+            orientation:"vertical"
+            on_release: app.select_topic(self.text)
+
+            FitImage:
+                source: "assets/167006.png"
+                #size_hint_y: 1
+                size_hint: .9, .9
+                pos_hint: {"center_x":0.5,"center_y": 0.35}
+                #radius: 19, 19, 19, 19
+           
+        MDLabel:
+            text:"Pesticides"
+            font_name: 'FTLTLT'
+            font_size: '15sp'
+            halign: "center"
+            pos_hint: {"center_x":0.75,"center_y":0.36}
+            color: rgba(0,0,0, 255)        
+      
+        MDCard:
+            text: "machinisme"
+            font_size: "0sp"
+            size_hint: None, None
+            size: 100,100
+            pos_hint: {"center_x":0.25,"center_y":0.24}
+            elevation: 4
+            padding: 5
+            spacing: 10
+            focus_behavior: True
+            focus_color:"lightgrey"
+            ripple_behavior:True
+            #radius: 15
+            #orientation:"vertical"
+            on_release: app.select_topic(self.text)
+            
+            FitImage:
+                source: "assets/14.png"
+                #size_hint_y: 1
+                size_hint: 1.2, 1.3
+                pos_hint: {"center_x":0.5,"center_y": 0.35}
+                #radius: 19, 19, 19, 19
+
+        MDLabel:
+            text:"Machinismes"
+            font_name: 'FTLTLT'
+            font_size: '15sp'
+            halign: "center"
+            pos_hint: {"center_x":0.25,"center_y":0.13}
+            color: rgba(0,0,0, 255)
+
+        MDCard:
+            text: "materiel"
+            size_hint: None, None
+            size: 100,100
+            focus_behavior: True
+            focus_color:"lightgrey"
+            pos_hint: {"center_x":0.75,"center_y":0.24}
+            elevation: 4
+            padding: 5
+            spacing: 10
+            ripple_behavior:True
+            #radius: 15
+            orientation:"vertical"
+            on_release: app.select_topic(self.text)
+
+            FitImage:
+                source: "assets/materiel.png"
+                #size_hint_y: 1
+                size_hint: 1.4, 1.5
+                pos_hint: {"center_x":0.5,"center_y": 0.35}
+                #radius: 19, 19, 19, 19
+            
+        MDLabel:
+            text:"Materiel"
+            font_name: 'FTLTLT'
+            font_size: '15sp'
+            halign: "center"
+            pos_hint: {"center_x":0.75,"center_y":0.13}
+            color: rgba(0,0,0, 255)
+        # MDLabel:
+        #     id: login_label
+        #     text: "Login"
+        #     font_size: 25
+        #     halign:'center'
+        #     size_hint_y: None
+        #     height: self.texture_size[1]
+
